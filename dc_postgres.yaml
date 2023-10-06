@@ -1,0 +1,20 @@
+services:
+  postgres:
+    image: postgis/postgis:15-3.3
+    volumes:
+      - type: bind
+        source: ./db
+        target: /var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5430:5432"
+
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: heflain@outlook.com.br
+      PGADMIN_DEFAULT_PASSWORD: password
+    ports:
+      - "5050:80"

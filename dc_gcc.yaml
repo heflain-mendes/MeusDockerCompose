@@ -1,0 +1,12 @@
+networks:
+  mynetwork:
+    driver: bridge
+services:
+  gcc:
+    image: gcc
+    volumes:
+      - type: bind
+        source: ./src
+        target: /app
+    networks:
+      - mynetwork

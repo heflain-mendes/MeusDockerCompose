@@ -1,0 +1,7 @@
+services:
+  prolog:
+    image: swipl
+    volumes:
+      - type: bind
+        source: ./src
+        target: /app
